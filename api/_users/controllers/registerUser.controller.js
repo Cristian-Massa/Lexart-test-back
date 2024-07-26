@@ -9,7 +9,6 @@ const registerUser = async (req, res) => {
     const { User } = db.sequelize.models;
 
     const hash = await encrypter(password);
-    console.log(hash);
 
     const user = await User.create({
       firstName,

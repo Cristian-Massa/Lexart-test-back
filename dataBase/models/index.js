@@ -9,10 +9,11 @@ const pg = require('pg')
 const db = {};
 let sequelize;
   sequelize = new Sequelize({
+    // url: process.env.DB_URL,
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    host: process.env.DB_HOSTNAME,
+    host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: 'postgres',
     dialectModule: pg, // I've added this.

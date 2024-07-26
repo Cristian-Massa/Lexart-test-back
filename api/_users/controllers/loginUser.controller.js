@@ -7,9 +7,10 @@ const loginUser = async (req, res) => {
         await db.sequelize.authenticate();
         await db.sequelize.sync({});
         const {User} = db.sequelize.models
-        const user = User.findOne({where: {
+        const user = await User.findOne({where: {
             email: email
         }})
+        console.log(user);
         if (user.id) {
             const result = compare(user.password, password)
             if(result){
