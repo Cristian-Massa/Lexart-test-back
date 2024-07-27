@@ -1,4 +1,3 @@
-const swaggerui = require("swagger-ui-express");
 const swaggerJS = require("swagger-jsdoc");
 
 const path = require("path");
@@ -11,12 +10,18 @@ const swaggerOptions = {
       version: "1.0.0",
       description: "Implementacion de testeo de rutas con swagger.",
     },
-    // servers: [
-    //   {
-    //     url: `http://localhost:3000`,
-    //   },
-    // ],
+    servers: [
+      {
+        url: `https://lexart-test-back.vercel.app/v1`, 
+        description: "My API Documentation",
+      },      
+      {
+        url: `http://localhost:3000`, 
+        description: "My API Documentation",
+      },
+    ],
   },
+  customCss: `https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css`,
   apis: [
     path.join(__dirname, "..", "_users", "routes", "index.router.js"),
     path.join(__dirname, "..", "_products", "routes", "index.router.js"),
@@ -27,6 +32,4 @@ const swaggerSpec = swaggerJS(swaggerOptions);
 
 module.exports = {
   swaggerSpec,
-  swaggerui,
-  swaggerOptions,
 };
