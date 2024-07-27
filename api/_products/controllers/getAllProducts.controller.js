@@ -6,7 +6,7 @@ const getAllProducts = async (req, res) => {
     await db.sequelize.sync({});
     const {Product} = db.sequelize.models;
 
-    const limit = parseInt(req.query.offset) || 15;
+    const limit = parseInt(req.query.limit) || 15;
     const offset = parseInt(req.query.offset) || 0;
     const products = await Product.findAndCountAll({ limit, offset });
     res.status(200).json({
