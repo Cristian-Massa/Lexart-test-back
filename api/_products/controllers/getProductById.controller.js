@@ -1,14 +1,17 @@
-const { Product } = require('../../../dataBase/models/product'); // Ajusta la ruta según sea necesario
+const db = require('../../../dataBase/models/index')
 
 const getProductById = async (req, res) => {
   try {
+    await db.sequelize.authenticate();
+    await db.sequelize.sync({});
+    const {Product} = db.sequelize.models;
     const product = await Product.findByPk(req.params.id);
     if (!product) {
-      return res.status(404).json({ error: 'Product not found' });
+      return res.status(404).json({ error: 'Producto no encontrado' });
     }
-    res.json(product);
+    res.status(200).json(product);
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: error.message });
   }
 };
 

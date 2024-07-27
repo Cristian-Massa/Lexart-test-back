@@ -1,4 +1,5 @@
 const { where } = require('sequelize');
+const jwt = require('jsonwebtoken')
 const db = require('../../../dataBase/models/index')
 const {compare} = require('../../../utils/encryptor.util')
 const loginUser = async (req, res) => {
@@ -14,6 +15,15 @@ const loginUser = async (req, res) => {
         if (user.id) {
             const result = compare(user.password, password)
             if(result){
+                const token = jwt.sign(user, process.env.JWT_SECRET,{
+                    algorithm: process.env.JWT_ALGORITHM,
+                    expiresIn: 86400000
+                })
+
+                res.cookie("access_token", token, {
+                    httpOnly: true,
+                    secure: true,
+                })
                 return res.status(200).json({ message: 'Login exitoso', user });
             }else{
                 return res.status(404).json({ message: 'Contraseña incorrecta'})

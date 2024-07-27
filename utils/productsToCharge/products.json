@@ -1,0 +1,354 @@
+{
+    "result": [
+      {
+        "name": "Awesome Rubber Keyboard",
+        "stock": 599,
+        "price": "44.00",
+        "model": "Towels",
+        "mark": "Tasty"
+      },
+      {
+        "name": "Small Steel Computer",
+        "stock": 52,
+        "price": "562.00",
+        "model": "Salad",
+        "mark": "Generic"
+      },
+      {
+        "name": "Small Fresh Ball",
+        "stock": 85,
+        "price": "73.00",
+        "model": "Mouse",
+        "mark": "Fantastic"
+      },
+      {
+        "name": "Luxurious Granite Cheese",
+        "stock": 166,
+        "price": "174.00",
+        "model": "Chair",
+        "mark": "Electronic"
+      },
+      {
+        "name": "Ergonomic Plastic Shoes",
+        "stock": 380,
+        "price": "61.00",
+        "model": "Towels",
+        "mark": "Electronic"
+      },
+      {
+        "name": "Luxurious Granite Fish",
+        "stock": 561,
+        "price": "154.00",
+        "model": "Car",
+        "mark": "Refined"
+      },
+      {
+        "name": "Fantastic Rubber Sausages",
+        "stock": 887,
+        "price": "490.00",
+        "model": "Bike",
+        "mark": "Modern"
+      },
+      {
+        "name": "Ergonomic Plastic Salad",
+        "stock": 194,
+        "price": "485.00",
+        "model": "Keyboard",
+        "mark": "Gorgeous"
+      },
+      {
+        "name": "Intelligent Bronze Mouse",
+        "stock": 510,
+        "price": "323.00",
+        "model": "Tuna",
+        "mark": "Luxurious"
+      },
+      {
+        "name": "Licensed Metal Gloves",
+        "stock": 327,
+        "price": "374.00",
+        "model": "Soap",
+        "mark": "Unbranded"
+      },
+      {
+        "name": "Intelligent Steel Bacon",
+        "stock": 605,
+        "price": "439.00",
+        "model": "Bacon",
+        "mark": "Practical"
+      },
+      {
+        "name": "Elegant Frozen Mouse",
+        "stock": 977,
+        "price": "509.00",
+        "model": "Towels",
+        "mark": "Incredible"
+      },
+      {
+        "name": "Handcrafted Fresh Chair",
+        "stock": 324,
+        "price": "535.00",
+        "model": "Sausages",
+        "mark": "Fantastic"
+      },
+      {
+        "name": "Refined Cotton Sausages",
+        "stock": 488,
+        "price": "395.00",
+        "model": "Table",
+        "mark": "Practical"
+      },
+      {
+        "name": "Gorgeous Soft Keyboard",
+        "stock": 150,
+        "price": "1000.00",
+        "model": "Bacon",
+        "mark": "Intelligent"
+      },
+      {
+        "name": "Handcrafted Frozen Salad",
+        "stock": 220,
+        "price": "729.00",
+        "model": "Chair",
+        "mark": "Elegant"
+      },
+      {
+        "name": "Small Bronze Hat",
+        "stock": 618,
+        "price": "452.00",
+        "model": "Pants",
+        "mark": "Electronic"
+      },
+      {
+        "name": "Ergonomic Plastic Shirt",
+        "stock": 746,
+        "price": "593.00",
+        "model": "Table",
+        "mark": "Recycled"
+      },
+      {
+        "name": "Awesome Rubber Shoes",
+        "stock": 176,
+        "price": "703.00",
+        "model": "Soap",
+        "mark": "Rustic"
+      },
+      {
+        "name": "Refined Wooden Chair",
+        "stock": 53,
+        "price": "845.00",
+        "model": "Computer",
+        "mark": "Refined"
+      },
+      {
+        "name": "Recycled Fresh Keyboard",
+        "stock": 70,
+        "price": "334.00",
+        "model": "Chips",
+        "mark": "Unbranded"
+      },
+      {
+        "name": "Bespoke Steel Hat",
+        "stock": 320,
+        "price": "504.00",
+        "model": "Salad",
+        "mark": "Practical"
+      },
+      {
+        "name": "Generic Frozen Chair",
+        "stock": 682,
+        "price": "316.00",
+        "model": "Bike",
+        "mark": "Handcrafted"
+      },
+      {
+        "name": "Ergonomic Metal Keyboard",
+        "stock": 170,
+        "price": "485.00",
+        "model": "Hat",
+        "mark": "Incredible"
+      },
+      {
+        "name": "Fantastic Concrete Sausages",
+        "stock": 708,
+        "price": "727.00",
+        "model": "Hat",
+        "mark": "Practical"
+      },
+      {
+        "name": "Elegant Cotton Keyboard",
+        "stock": 402,
+        "price": "386.00",
+        "model": "Shirt",
+        "mark": "Unbranded"
+      },
+      {
+        "name": "Handmade Rubber Towels",
+        "stock": 511,
+        "price": "841.00",
+        "model": "Towels",
+        "mark": "Fantastic"
+      },
+      {
+        "name": "Fantastic Plastic Cheese",
+        "stock": 133,
+        "price": "204.00",
+        "model": "Car",
+        "mark": "Handcrafted"
+      },
+      {
+        "name": "Refined Cotton Pizza",
+        "stock": 763,
+        "price": "442.00",
+        "model": "Mouse",
+        "mark": "Modern"
+      },
+      {
+        "name": "Oriental Steel Cheese",
+        "stock": 439,
+        "price": "284.00",
+        "model": "Tuna",
+        "mark": "Electronic"
+      },
+      {
+        "name": "Unbranded Soft Mouse",
+        "stock": 737,
+        "price": "780.00",
+        "model": "Table",
+        "mark": "Tasty"
+      },
+      {
+        "name": "Sleek Frozen Salad",
+        "stock": 171,
+        "price": "367.00",
+        "model": "Chair",
+        "mark": "Sleek"
+      },
+      {
+        "name": "Sleek Bronze Pizza",
+        "stock": 631,
+        "price": "528.00",
+        "model": "Hat",
+        "mark": "Sleek"
+      },
+      {
+        "name": "Luxurious Metal Shirt",
+        "stock": 906,
+        "price": "379.00",
+        "model": "Shoes",
+        "mark": "Generic"
+      },
+      {
+        "name": "Electronic Concrete Keyboard",
+        "stock": 90,
+        "price": "393.00",
+        "model": "Hat",
+        "mark": "Handcrafted"
+      },
+      {
+        "name": "Fantastic Bronze Hat",
+        "stock": 734,
+        "price": "353.00",
+        "model": "Shoes",
+        "mark": "Refined"
+      },
+      {
+        "name": "Elegant Frozen Pants",
+        "stock": 506,
+        "price": "123.00",
+        "model": "Sausages",
+        "mark": "Small"
+      },
+      {
+        "name": "Handcrafted Wooden Table",
+        "stock": 166,
+        "price": "195.00",
+        "model": "Shirt",
+        "mark": "Modern"
+      },
+      {
+        "name": "Handcrafted Rubber Car",
+        "stock": 6,
+        "price": "377.00",
+        "model": "Pizza",
+        "mark": "Unbranded"
+      },
+      {
+        "name": "Handmade Metal Mouse",
+        "stock": 167,
+        "price": "595.00",
+        "model": "Pants",
+        "mark": "Gorgeous"
+      },
+      {
+        "name": "Elegant Metal Chips",
+        "stock": 300,
+        "price": "963.00",
+        "model": "Salad",
+        "mark": "Oriental"
+      },
+      {
+        "name": "Oriental Granite Tuna",
+        "stock": 929,
+        "price": "60.00",
+        "model": "Pants",
+        "mark": "Incredible"
+      },
+      {
+        "name": "Elegant Plastic Soap",
+        "stock": 285,
+        "price": "1.00",
+        "model": "Keyboard",
+        "mark": "Unbranded"
+      },
+      {
+        "name": "Refined Soft Chips",
+        "stock": 434,
+        "price": "171.00",
+        "model": "Towels",
+        "mark": "Incredible"
+      },
+      {
+        "name": "Gorgeous Plastic Table",
+        "stock": 11,
+        "price": "784.00",
+        "model": "Pizza",
+        "mark": "Unbranded"
+      },
+      {
+        "name": "Intelligent Bronze Chips",
+        "stock": 137,
+        "price": "49.00",
+        "model": "Chair",
+        "mark": "Practical"
+      },
+      {
+        "name": "Generic Concrete Gloves",
+        "stock": 243,
+        "price": "733.00",
+        "model": "Salad",
+        "mark": "Generic"
+      },
+      {
+        "name": "Gorgeous Plastic Table",
+        "stock": 11,
+        "price": "784.00",
+        "model": "Pizza",
+        "mark": "Unbranded"
+      },
+      {
+        "name": "Intelligent Bronze Chips",
+        "stock": 137,
+        "price": "49.00",
+        "model": "Chair",
+        "mark": "Practical"
+      },
+      {
+        "name": "Generic Concrete Gloves",
+        "stock": 243,
+        "price": "733.00",
+        "model": "Salad",
+        "mark": "Generic"
+      }
+    ]
+  }

@@ -1,6 +1,7 @@
 const db = require("../../../dataBase/models/index");
 const { encrypter } = require("../../../utils/encryptor.util");
-// Controlador para el registro de usuario
+const jwt = require('jsonwebtoken');
+
 const registerUser = async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
@@ -8,20 +9,38 @@ const registerUser = async (req, res) => {
     await db.sequelize.sync({});
     const { User } = db.sequelize.models;
 
+    // Hash the password
     const hash = await encrypter(password);
 
+    // Create the user
     const user = await User.create({
       firstName,
       lastName,
       email,
       password: hash,
     });
-    if (user.id) {
-      return res.status(201).json({ message: "Usuario creado", user });
+
+    if (user && user.id) {
+      // Generate a token with minimal payload
+      const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, {
+        algorithm: process.env.JWT_ALGORITHM || 'HS256',
+        expiresIn: '1d' // '1d' is equivalent to 86400000 ms
+      });
+
+      // Set the token in a cookie
+      res.cookie("access_token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production', // Only use secure cookies in production
+        maxAge: 86400000 // 24 hours in milliseconds
+      });
+
+      return res.status(201).json({ message: "Usuario creado" });
     }
+
     return res.status(400).json({ message: "No se pudo crear el usuario" });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error('Error en el registro del usuario:', error);
+    res.status(500).json({ message: "Error interno del servidor" });
   }
 };
 
