@@ -6,7 +6,7 @@ const deleteOneProduct = async (req, res) => {
     await db.sequelize.authenticate();
     await db.sequelize.sync();
     const {Product} = db.sequelize.models;
-    const {id} = req.body
+    const {id} = req.param
     await Product.destroy({where:
       {id: id},
     });
