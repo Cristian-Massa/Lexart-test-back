@@ -15,15 +15,22 @@ const loginUser = async (req, res) => {
         if (user.id) {
             const result = compare(user.password, password)
             if(result){
-                const token = jwt.sign(user, process.env.JWT_SECRET,{
-                    algorithm: process.env.JWT_ALGORITHM,
-                    expiresIn: 86400000
-                })
-
+                const token = jwt.sign({
+                    id: user.id,
+                    email: user.email,  
+                    firstName: user.firstName,
+                    lastName: user.lastName
+                  }, process.env.JWT_SECRET, {
+                  algorithm: process.env.JWT_ALGORITHM || 'HS256',
+                  expiresIn: '1d'
+                });
+          
+                // Set the token in a cookie
                 res.cookie("access_token", token, {
-                    httpOnly: true,
-                    secure: true,
-                })
+                  httpOnly: true,
+                  secure: process.env.NODE_ENV === 'production', // Only use secure cookies in production
+                  maxAge: 86400000
+                });
                 return res.status(200).json({ message: 'Login exitoso', user });
             }else{
                 return res.status(404).json({ message: 'Contraseña incorrecta'})

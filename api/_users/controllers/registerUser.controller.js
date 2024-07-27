@@ -22,16 +22,21 @@ const registerUser = async (req, res) => {
 
     if (user && user.id) {
       // Generate a token with minimal payload
-      const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, {
+      const token = jwt.sign({
+          id: user.id,
+          email: user.email,  
+          firstName: user.firstName,
+          lastName: user.lastName
+        }, process.env.JWT_SECRET, {
         algorithm: process.env.JWT_ALGORITHM || 'HS256',
-        expiresIn: '1d' // '1d' is equivalent to 86400000 ms
+        expiresIn: '1d'
       });
 
       // Set the token in a cookie
       res.cookie("access_token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production', // Only use secure cookies in production
-        maxAge: 86400000 // 24 hours in milliseconds
+        maxAge: 86400000
       });
 
       return res.status(201).json({ message: "Usuario creado" });
