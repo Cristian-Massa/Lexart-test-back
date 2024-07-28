@@ -9,14 +9,13 @@ const authenticateToken = require('../../common/middlewares/authcheck');
 
 const productsRouter = Router()
 
-
 /**
  * @swagger
  * /v1/products/get/all:
  *   get:
  *     tags:
  *       - Products
- *     summary: Get all products
+ *     summary: Get all products with pagination
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -33,12 +32,42 @@ const productsRouter = Router()
  *     responses:
  *       200:
  *         description: Returns all products
-  *       500:
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 limit:
+ *                   type: integer
+ *                 offset:
+ *                   type: integer
+ *                 products:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                       name:
+ *                         type: string
+ *                       price:
+ *                         type: number
+ *                         format: float
+ *                       stock:
+ *                         type: integer
+ *                       model:
+ *                         type: string
+ *                       mark:
+ *                         type: string
+ *                 total:
+ *                   type: integer
+ *       500:
  *         description: Returns server error
  */
+
 /**
  * @swagger
- * /v1/products/get/one/{id}:
+ * /v1/products/get/one:
  *   get:
  *     tags:
  *       - Products
@@ -46,7 +75,7 @@ const productsRouter = Router()
  *     security:
  *       - bearerAuth: []
  *     parameters:
- *       - in: path
+ *       - in: query
  *         name: id
  *         schema:
  *           type: string
@@ -73,12 +102,12 @@ const productsRouter = Router()
  *                   type: string
  *                 mark:
  *                   type: string
- * 
  *       404:
  *         description: Product not found
  *       500:
  *         description: Internal server error
  */
+
 /**
  * @swagger
  * /v1/products/create/seed:
@@ -97,8 +126,9 @@ const productsRouter = Router()
  *                 token:
  *                   type: string
  *       500:
- *         description: Return error fron server
+ *         description: Return error from server
  */
+
 /**
  * @swagger
  * /v1/products/create:
@@ -178,9 +208,10 @@ const productsRouter = Router()
  *       500:
  *         description: Internal server error
  */
+
 /**
  * @swagger
- * /v1/products/delete/{id}:
+ * /v1/products/delete:
  *   delete:
  *     tags:
  *       - Products
@@ -188,7 +219,7 @@ const productsRouter = Router()
  *     security:
  *       - bearerAuth: []
  *     parameters:
- *       - in: path
+ *       - in: query
  *         name: id
  *         schema:
  *           type: integer
