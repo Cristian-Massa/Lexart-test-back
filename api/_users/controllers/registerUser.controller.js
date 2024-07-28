@@ -34,12 +34,13 @@ const registerUser = async (req, res) => {
 
       // Set the token in a cookie
       res.cookie("access_token", token, {
-        httpOnly: true,
+        httpOnly: false,
         secure: process.env.NODE_ENV === 'production', // Only use secure cookies in production
-        maxAge: 86400000
+        maxAge: 86400000,
+        sameSite: 'Lax'
       });
 
-      return res.status(201).json({ message: "Usuario creado" });
+      return res.status(201).json({ message: "Usuario creado: " + token });
     }
 
     return res.status(400).json({ message: "No se pudo crear el usuario" });
