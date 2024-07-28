@@ -4,19 +4,20 @@ const jwt = require('jsonwebtoken');
 
 const registerUser = async (req, res) => {
   try {
-    const { firstName, lastName, email, password } = req.body;
+    const { body } = req;
+    console.log(body);
     await db.sequelize.authenticate();
     await db.sequelize.sync({});
     const { User } = db.sequelize.models;
 
     // Hash the password
-    const hash = await encrypter(password);
+    const hash = await encrypter(body.password);
 
     // Create the user
     const user = await User.create({
-      firstName,
-      lastName,
-      email,
+      firstName: body.firstName,
+      lastName: body.lastName,
+      email: body.email,
       password: hash,
     });
 
@@ -34,10 +35,11 @@ const registerUser = async (req, res) => {
 
       // Set the token in a cookie
       res.cookie("access_token", token, {
-        httpOnly: false,
+        httpOnly: true,
+        path: '/',
         secure: process.env.NODE_ENV === 'production', // Only use secure cookies in production
         maxAge: 86400000,
-        sameSite: 'Lax'
+        sameSite: process.env.SAME_SITE
       });
 
       return res.status(201).json({ message: "Usuario creado: " + token });
@@ -46,7 +48,7 @@ const registerUser = async (req, res) => {
     return res.status(400).json({ message: "No se pudo crear el usuario" });
   } catch (error) {
     console.error('Error en el registro del usuario:', error);
-    res.status(500).json({ message: "Error interno del servidor" });
+    res.status(500).json({ message: error.message });
   }
 };
 

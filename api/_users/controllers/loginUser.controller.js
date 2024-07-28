@@ -33,10 +33,11 @@ const loginUser = async (req, res) => {
 
         // Set the token in a cookie
         res.cookie("access_token", token, {
-          httpOnly: false,
+          httpOnly: true,
+          path: '/',
           secure: process.env.NODE_ENV === "production", // Only use secure cookies in production
           maxAge: 86400000,
-          sameSite: "Lax",
+          sameSite: process.env.SAME_SITE,
         });
         return res.status(200).json({ message: "Login exitoso:", token });
       } else {
