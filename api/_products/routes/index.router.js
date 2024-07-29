@@ -6,6 +6,7 @@ const deleteAllProducts = require('../controllers/deleteAllProducts.controller')
 const createProduct = require('../controllers/createProduct.controller');
 const deleteOneProduct = require('../controllers/deleteOneProduct.controller');
 const authenticateToken = require('../../common/middlewares/authcheck');
+const putProduct = require('../controllers/putProduct.controller');
 
 const productsRouter = Router()
 
@@ -253,5 +254,9 @@ productsRouter.delete('/delete/all?', authenticateToken, deleteAllProducts);
 
 // Ruta para eliminar todos los productos
 productsRouter.delete('/delete/one?', authenticateToken, deleteOneProduct);
+
+// Ruta para eliminar todos los productos
+productsRouter.put('/put/one', authenticateToken, putProduct);
+
 
 module.exports = productsRouter

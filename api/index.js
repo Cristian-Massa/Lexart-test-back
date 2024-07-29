@@ -10,8 +10,8 @@ const app = express();
 
 // middlewares
 app.use(cors({
-    origin: 'https://lexart-client.vercel.app', 
-    credentials: true // Permite el envío de cookies y otras credenciales
+    origin: process.env.HOST, 
+    credentials: true, // Permite el envío de cookies y otras credenciales
 }))
 app.use(cookies())
 app.use(express.json({ limit: '5mb'}))

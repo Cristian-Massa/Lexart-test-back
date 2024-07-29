@@ -5,7 +5,7 @@ const getProductById = async (req, res) => {
     await db.sequelize.authenticate();
     await db.sequelize.sync({});
     const {Product} = db.sequelize.models;
-    const product = await Product.findByPk(req.params.id);
+    const product = await Product.findByPk(req.query.id);
     if (!product) {
       return res.status(404).json({ error: 'Producto no encontrado' });
     }

@@ -7,8 +7,9 @@ const deleteAllProducts = async (req, res) => {
     const limit = parseInt(req.query.limit) || 15;
     const offset = parseInt(req.query.offset) || 0;
     const {Product} = db.sequelize.models;
-    await Product.truncate();
     const products = await Product.findAndCountAll({ limit, offset });
+    await Product.truncate();
+    console.log(products);
     res.status(200).json({
       total: products.count,
       products: products.rows,
