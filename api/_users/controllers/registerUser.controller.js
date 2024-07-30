@@ -42,7 +42,7 @@ const registerUser = async (req, res) => {
         sameSite: process.env.SAME_SITE
       });
 
-      return res.status(201).json({ message: "Usuario creado: " + token });
+      return res.status(201).json({ message: "Usuario creado" });
     }
 
     return res.status(400).json({ message: "No se pudo crear el usuario" });
